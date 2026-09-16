@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+.event-card {
+  background: white;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-category {
+  color: #2563eb;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.event-card h2 {
+  margin-bottom: 15px;
+}
+
+.event-card p {
+  margin: 8px 0;
+}
+
+.event-card button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.event-card button:hover {
+  background: #1d4ed8;
+}
+
+.events-page {
+  padding: 40px;
+}
+
+.events-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.events-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav-bar {
+  background: #2563eb;
+  padding: 20px;
+  color: white;
+  align-items: center;
+}
+.nav-bar h2 {
+  /* display: inline-block; */
+  margin-right: 20px;
+}
+.nav-bar button {
+  background: white;
+  border: none;
+  color: #2563eb;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.nav-bar button:hover {
+  text-decoration: underline;
+}
