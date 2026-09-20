@@ -1,11 +1,13 @@
 function SearchBar({search, setSearch}){
     return (
+        <div className="search-bar">
         <input
         type="text"
-        placeholder="Search for events"
+        placeholder=" Search for events"
         value={search}
         onChange={(e)=>setSearch(e.target.value)}
         />
+        </div>
     )
 }
 export default SearchBar

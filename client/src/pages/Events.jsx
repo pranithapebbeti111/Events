@@ -1,8 +1,10 @@
 import { useState } from "react";
 import EventCard from "../components/EventCard";
 import SearchBar from "../components/searchBar";
+import FilterBar from "../components/filterBar";
 function Events(){
     const[search,setSearch]=useState("")
+    const[category,setCategory]=useState("All")
     const events=[
         {
             id:1,
@@ -27,9 +29,18 @@ function Events(){
     }
     ]
 
-const filteredEvents = events.filter((event) =>
-  event.title.toLowerCase().includes(search.toLowerCase())
-)
+
+
+const filteredEvents = events.filter((event) => {
+  const matchesSearch = event.title
+    .toLowerCase()
+    .includes(search.toLowerCase())
+
+  const matchesCategory =
+    category === "All" || event.category === category
+
+  return matchesSearch && matchesCategory
+})
 
 
     return(
@@ -39,6 +50,10 @@ const filteredEvents = events.filter((event) =>
         <SearchBar
         search={search}
         setSearch={setSearch}
+        />
+        <FilterBar
+        category={category}
+        setCategory={setCategory}
         />
         <div className="events-container">
         {
