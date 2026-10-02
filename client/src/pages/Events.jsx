@@ -2,32 +2,10 @@ import { useState } from "react";
 import EventCard from "../components/EventCard";
 import SearchBar from "../components/searchBar";
 import FilterBar from "../components/filterBar";
+import events from "../data/events";
 function Events(){
     const[search,setSearch]=useState("")
     const[category,setCategory]=useState("All")
-    const events=[
-        {
-            id:1,
-            title:"Hackathon 2026",
-            category:"Technical",
-            date:"20 september 2026",
-            venue:"Main Seminar hall"
-        },
-         {
-      id: 2,
-      title: "Code Sprint",
-      category: "Technical",
-      date: "25 September 2026",
-      venue: "Computer Lab"
-    },
-    {
-      id: 3,
-      title: "Cultural Fest",
-      category: "Cultural",
-      date: "30 September 2026",
-      venue: "College Ground"
-    }
-    ]
 
 
 

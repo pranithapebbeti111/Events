@@ -111,3 +111,79 @@ body {
   color: white;
   background: #2563eb;
 }
+
+.home {
+  min-height: 80vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background: #2563eb;
+}
+
+/* Login & Register */
+
+.auth-page {
+  width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-page input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+}
+
+.auth-page input:focus {
+  border-color: #2563eb;
+}
+
+.auth-page button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-page button:hover {
+  background: #1d4ed8;
+}
