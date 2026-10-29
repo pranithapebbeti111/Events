@@ -9,6 +9,7 @@ import Register from './pages/Register'
 import Login from './pages/login'
 import MyEvents from './pages/MyEvents'
 import { AuthProvider } from "./context/AuthContext"
+import BackendTest from "./pages/BackendTest"
 function App() {
   
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/my-events" element={<MyEvents />} />
+      <Route path="/backend-test" element={<BackendTest />} />
     </Routes>
   </div>
   </BrowserRouter>  

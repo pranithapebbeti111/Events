@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
   })
 })
 
+app.get("/api/test", (req, res) => {
+  res.json({
+    message: "Hello from Express backend!"
+  })
+})
+
 const PORT = 5000
 
 app.listen(PORT, () => {
