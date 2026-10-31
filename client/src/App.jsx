@@ -6,10 +6,12 @@ import EventdetailsPage from './pages/EventdetailsPage'
 import './App.css'
 import Home from './pages/home'
 import Register from './pages/Register'
-import Login from './pages/login'
+import Login from './pages/Login'
 import MyEvents from './pages/MyEvents'
 import { AuthProvider } from "./context/AuthContext"
 import BackendTest from "./pages/BackendTest"
+import Dashboard from "./pages/DashBoard"
+import AdminDashboard from "./pages/AdminDashboard"
 function App() {
   
   return (
@@ -26,6 +28,8 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/my-events" element={<MyEvents />} />
       <Route path="/backend-test" element={<BackendTest />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/admin" element={<AdminDashboard />} />
     </Routes>
   </div>
   </BrowserRouter>  

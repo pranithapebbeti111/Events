@@ -1,67 +1,93 @@
+
 import { useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
 
 function Register() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    rollNo: ""
-  })
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        password: ""
     })
-  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+    const [message, setMessage] = useState("")
+    const navigate = useNavigate()
 
-    console.log(formData)
-  }
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
 
-  return (
-    <div className="auth-page">
-      <h1>Register</h1>
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setMessage("")
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+        try {
+            const response = await fetch("http://localhost:5000/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
 
-        <input
-          type="text"
-          name="rollNo"
-          placeholder="Roll Number"
-          value={formData.rollNo}
-          onChange={handleChange}
-        />
+            const data = await response.json()
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
+            if (response.ok) {
+                alert("Registration successful! Please login.")
+                navigate("/login")
+            } else {
+                setMessage(data.message)
+            }
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-        />
+        } catch (error) {
+            setMessage("Unable to connect to server")
+        }
+    }
 
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  )
+    return (
+        <div className="auth-page">
+            <h1>Student Registration</h1>
+
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                />
+
+                <button type="submit">Register</button>
+            </form>
+
+            {message && <p>{message}</p>}
+
+            <p>
+                Already registered? <Link to="/login">Login here</Link>
+            </p>
+        </div>
+    )
 }
 
 export default Register
